@@ -21,44 +21,28 @@ public class Engine : MonoBehaviour {
     public float gpsLabelPosY;
     public float warriorHirePosX;
     public float warriorHirePosY;
-    public float warriorLevelPosX;
-    public float warriorLevelPosY;
-    public float warriorRankPosX;
-    public float warriorRankPosY;
-    public float warriorStatusPosX;
-    public float warriorStatusPosY;
+    public float warriorCountPosX;
+    public float warriorCountPosY;
     public float warriorUpgradePosX;
     public float warriorUpgradePosY;
     public float rogueHirePosX;
     public float rogueHirePosY;
-    public float rogueLevelPosX;
-    public float rogueLevelPosY;
-    public float rogueRankPosX;
-    public float rogueRankPosY;
-    public float rogueUpgradePosX;
-    public float rogueUpgradePosY;
-    public float rogueStatusPosX;
-    public float rogueStatusPosY;
+    public float rogueCountPosX;
+    public float rogueCountPosY;
     public float QuestBoardPosX;
     public float QuestBoardPosY;
 
-    public int totalGold = 10;
+    public int totalGold = 0;
     public int goldPerSecond = 0;
 
     //List of income sources
-    public int warriorLevel = 0;
+    public int warriorCount = 0;
     static public int warriorGPS = 1;
     static public int warriorPrice = 10;
-    public string warriorStatus = "";
-    public int warriorRank = 0;
-    public bool warriorUpgrade = false;
-    public bool rogueUpgrade = false;
 
-    public int rogueLevel = 0;
+    public int rogueCount = 0;
     static public int rogueGPS = 10;
     static public int roguePrice = 100;
-    public string rogueStatus = "";
-    public int rogueRank = 0;
 
     public float goldUpdateTime = 1f;
 
@@ -77,22 +61,8 @@ public class Engine : MonoBehaviour {
         //Display all income and hired mercenaries information
         GUI.Label(new Rect(Screen.width * goldLabelPosX, Screen.height * goldLabelPosY, Screen.width * .5f, Screen.height * .1f), "Gold:" + totalGold.ToString());
         GUI.Label(new Rect(Screen.width * gpsLabelPosX, Screen.height * gpsLabelPosY, Screen.width * .5f, Screen.height * .1f), "GPS: " + goldPerSecond.ToString());
-
-        //Cases for warrior level and status
-        if(warriorLevel > 0)
-        {
-            GUI.Label(new Rect(Screen.width * warriorLevelPosX, Screen.height * warriorLevelPosY, Screen.width * .5f, Screen.height * .1f), "Warrior Level: " + warriorLevel.ToString());
-            GUI.Label(new Rect(Screen.width * warriorRankPosX, Screen.height * warriorRankPosY, Screen.width * .5f, Screen.height * .1f), "Rank: " + warriorRank.ToString());
-            GUI.Label(new Rect(Screen.width * warriorStatusPosX, Screen.height * warriorStatusPosY, Screen.width * .5f, Screen.height * .1f), "Task: " + StaticData.warriorStatuses[warriorRank]);
-        }
-
-        //Cases for rogue level and status
-        if (rogueLevel > 0)
-        {
-            GUI.Label(new Rect(Screen.width * rogueLevelPosX, Screen.height * rogueLevelPosY, Screen.width * .5f, Screen.height * .1f), "Rogue Level: " + rogueLevel.ToString());
-            GUI.Label(new Rect(Screen.width * rogueRankPosX, Screen.height * rogueRankPosY, Screen.width * .5f, Screen.height * .1f), "Rank: " + rogueRank.ToString());
-            GUI.Label(new Rect(Screen.width * rogueStatusPosX, Screen.height * rogueStatusPosY, Screen.width * .5f, Screen.height * .1f), "Task: " + StaticData.rogueStatuses[rogueRank]);
-        }
+        GUI.Label(new Rect(Screen.width * warriorCountPosX, Screen.height * warriorCountPosY, Screen.width * .5f, Screen.height * .1f), "Warrior Level: " + warriorCount.ToString());
+        GUI.Label(new Rect(Screen.width * rogueCountPosX, Screen.height * rogueCountPosY, Screen.width * .5f, Screen.height * .1f), "Rogue Level: " + rogueCount.ToString());
 
         //Purchase list
         //Press on the gold button to increment gold
@@ -103,16 +73,15 @@ public class Engine : MonoBehaviour {
         //Press on the hire warrior to increment warrior count
         if (GUI.Button(new Rect(Screen.width * warriorHirePosX, Screen.height * warriorHirePosY, Screen.width * .5f, Screen.height * .1f), "Level Warrior"))
         {
-            if(totalGold >= warriorPrice && warriorLevel < 9)
+            if(totalGold >= warriorPrice)
             {
-                warriorLevel = warriorLevel + 1;
+                warriorCount = warriorCount + 1;
                 totalGold -= warriorPrice;
             }            
         }
         if (GUI.Button(new Rect(Screen.width * warriorUpgradePosX, Screen.height * warriorUpgradePosY, Screen.width * .5f, Screen.height * .1f), "Upgrade Warrior"))
         {
             //Save current stats
-            warriorUpgrade = true;
             saveGuildState();
 
             //Load upgrade screen
@@ -120,20 +89,11 @@ public class Engine : MonoBehaviour {
         }
         if (GUI.Button(new Rect(Screen.width * rogueHirePosX, Screen.height * rogueHirePosY, Screen.width * .5f, Screen.height * .1f), "Level Rogue"))
         {
-            if (totalGold >= roguePrice && rogueLevel < 9)
+            if (totalGold >= roguePrice)
             {
-                rogueLevel = rogueLevel + 1;
+                rogueCount = rogueCount + 1;
                 totalGold -= roguePrice;
             }
-        }
-        if (GUI.Button(new Rect(Screen.width * rogueUpgradePosX, Screen.height * rogueUpgradePosY, Screen.width * .5f, Screen.height * .1f), "Upgrade Rogue"))
-        {
-            //Save current stats
-            rogueUpgrade = true;
-            saveGuildState();
-            
-            //Load upgrade screen
-            SceneManager.LoadScene("UpgradeScreen");
         }
         if (GUI.Button(new Rect(Screen.width * QuestBoardPosX, Screen.height * QuestBoardPosY, Screen.width * .5f, Screen.height * .1f), "Quest Board"))
         {
@@ -152,12 +112,8 @@ public class Engine : MonoBehaviour {
         //Reload all saved variables
         totalGold = StaticData.savedTotalGold;
         goldPerSecond = StaticData.savedGoldPerSecond;
-        warriorLevel = StaticData.savedWarriorLevel;
-        rogueLevel = StaticData.savedRogueLevel;
-        warriorRank = StaticData.savedWarriorRank;
-        rogueRank = StaticData.savedRogueRank;
-        warriorUpgrade = StaticData.warriorUpPressed;
-        rogueUpgrade = StaticData.rogueUpPressed;
+        warriorCount = StaticData.savedWarriorLevel;
+        rogueCount = StaticData.savedRrogueLevel;
     }
 	
 	// Update is called once per frame
@@ -175,7 +131,7 @@ public class Engine : MonoBehaviour {
     int getGoldPerSecond()
     {
         //Add up all the stuff you have
-        goldPerSecond = warriorLevel * (warriorRank + 1) * warriorGPS + rogueLevel * (rogueRank + 1) * rogueGPS;
+        goldPerSecond =  warriorCount * warriorGPS + rogueCount * rogueGPS;
 
         return goldPerSecond;
     }
@@ -260,11 +216,7 @@ public class Engine : MonoBehaviour {
     {
         StaticData.savedTotalGold = totalGold;
         StaticData.savedGoldPerSecond = goldPerSecond;
-        StaticData.savedWarriorLevel = warriorLevel;
-        StaticData.savedRogueLevel = rogueLevel;
-        StaticData.warriorUpPressed = warriorUpgrade;
-        StaticData.rogueUpPressed = rogueUpgrade;
-        StaticData.savedWarriorRank = warriorRank;
-        StaticData.savedRogueRank = rogueRank;
+        StaticData.savedWarriorLevel = warriorCount;
+        StaticData.savedRrogueLevel = rogueCount;
     }
 }
