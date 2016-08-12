@@ -104,7 +104,8 @@ public class Engine : MonoBehaviour {
         if (GUI.Button(new Rect(Screen.width * warriorHirePosX, Screen.height * warriorHirePosY, Screen.width * .5f, Screen.height * .1f),
 			"Level Warrior cost: " + warriorPrice))
         {
-            if(totalGold >= warriorPrice && warriorLevel < 9)
+            if( //TODO remove after testing totalGold >= warriorPrice && 
+				warriorLevel < 9)
             {
                 warriorLevel = warriorLevel + 1;
                 totalGold -= warriorPrice;
@@ -122,7 +123,8 @@ public class Engine : MonoBehaviour {
         if (GUI.Button(new Rect(Screen.width * rogueHirePosX, Screen.height * rogueHirePosY, Screen.width * .5f, Screen.height * .1f),
 			"Level Rogue cost: " + roguePrice))
         {
-            if (totalGold >= roguePrice && rogueLevel < 9)
+            if (//TODO remove after testing totalGold >= roguePrice && 
+				rogueLevel < 9)
             {
                 rogueLevel = rogueLevel + 1;
                 totalGold -= roguePrice;
@@ -130,12 +132,12 @@ public class Engine : MonoBehaviour {
         }
         if (GUI.Button(new Rect(Screen.width * rogueUpgradePosX, Screen.height * rogueUpgradePosY, Screen.width * .5f, Screen.height * .1f), "Upgrade Rogue"))
         {
-            //Save current stats
-            rogueUpgrade = true;
-            saveGuildState();
-            
-            //Load upgrade screen
-            SceneManager.LoadScene("UpgradeScreen");
+			//Save current stats
+			rogueUpgrade = true;
+			saveGuildState ();
+        
+			//Load upgrade screen
+			SceneManager.LoadScene ("UpgradeScreen");
         }
         if (GUI.Button(new Rect(Screen.width * QuestBoardPosX, Screen.height * QuestBoardPosY, Screen.width * .5f, Screen.height * .1f), "Quest Board"))
         {

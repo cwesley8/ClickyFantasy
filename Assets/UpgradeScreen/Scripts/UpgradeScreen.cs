@@ -33,7 +33,7 @@ public class UpgradeScreen : MonoBehaviour
 
             if (GUI.Button(new Rect(Screen.width * rankUpButtonPosX, Screen.height * rankUpButtonPosY, Screen.width * .5f, Screen.height * .1f), "Warrior Rank Up"))
             {
-                if(StaticData.savedWarriorLevel == 9 && StaticData.savedWarriorRank < 2)
+				if(StaticData.savedWarriorLevel == 9 && StaticData.savedWarriorRank < StaticData.warriorStatuses.Length - 1)
                 {
                     StaticData.savedWarriorRank++;
                 }
@@ -45,7 +45,7 @@ public class UpgradeScreen : MonoBehaviour
 
             if (GUI.Button(new Rect(Screen.width * rankUpButtonPosX, Screen.height * rankUpButtonPosY, Screen.width * .5f, Screen.height * .1f), "Rogue Rank Up"))
             {
-                if (StaticData.savedRogueLevel == 9 && StaticData.savedRogueRank < 2)
+				if (StaticData.savedRogueLevel == 9 && StaticData.savedRogueRank < StaticData.rogueStatuses.Length - 1)
                 {
                     StaticData.savedRogueRank++;
                 }
