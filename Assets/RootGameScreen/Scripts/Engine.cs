@@ -68,7 +68,7 @@ public class Engine : MonoBehaviour {
     public System.Random ran = new System.Random();
 
     public List<Adventurer> Adventurers = new List<Adventurer>();
-    public List<Quest> Quests = new List<Quest>();
+    
     void OnGUI()
     {
         //Display background texture 
@@ -151,7 +151,8 @@ public class Engine : MonoBehaviour {
 
     // Use this for initialization
     void Start ()
-    {    
+    {
+        
         goldUpdateTime = 1f;
         //Reload all saved variables
         totalGold = StaticData.savedTotalGold;
@@ -189,15 +190,7 @@ public class Engine : MonoBehaviour {
         Adventurer Hector = new Adventurer(1, "Hector", "Warrior", 100, 100, 0, 10, 5, 10, 5, 7);
     }
 
-    //Questboard quests should be added here
-    void populateQuests()
-    {
-        //Rank 1 quests
-        Quest RatExtermination = new Quest("Rat Extermination", 1, 10, 10);
 
-        //Rank 2 quests
-        Quest RatKingHunt = new Quest("King of the Rats", 2, 100, 100);
-    }
     /*void generateAdventurer()
     {
         //First pull random name from list and assign it to new adventurer object

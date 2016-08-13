@@ -20,16 +20,16 @@ public class Adventurer
         
     public Adventurer(int curLevel, string name, string charClass, int totalHP,  int curHP, int curXP, int pAtk, int mAtk, int pDef, int mDef, int speed)
     {
-        curLevel = CurLevel;
-        name = Name;
-        charClass = CharClass;
-        totalHP = TotalHP;
-        curHP = CurHP;
-        curXP = CurXP;
-        pAtk = PAtk;
-        mAtk = MAtk;
-        pDef = PDef;
-        mDef = MDef;
-        speed = Speed;
+        CurLevel = curLevel;
+        Name = Name;
+        CharClass = charClass;
+        TotalHP = totalHP;
+        CurHP = curHP;
+        CurXP = curXP;
+        PAtk = pAtk;
+        MAtk = mAtk;
+        PDef = pDef;
+        MDef = mDef;
+        Speed = speed;
     }
 }
