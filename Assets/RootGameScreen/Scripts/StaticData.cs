@@ -25,4 +25,7 @@ public static class StaticData
 
     static public string[] rogueStatuses = new string[2] {"Pickpocket grannies",
                                                           "Ambush caravans"};
+
+    //Quest Board related junk
+    static public int numOfQuests { get; set; }
 }
