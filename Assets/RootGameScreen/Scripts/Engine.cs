@@ -74,8 +74,6 @@ public class Engine : MonoBehaviour
 
     public System.Random ran = new System.Random();
 
-    public List<Adventurer> Adventurers = new List<Adventurer>();
-
     void OnGUI()
     {
         //Display background texture 
@@ -175,8 +173,8 @@ public class Engine : MonoBehaviour
             //Save current state
             //saveGuildState();
 
-            //Load blacksmith scene
-            //SceneManager.LoadScene("HireBoard");
+            //Load roster scene
+            SceneManager.LoadScene("Roster");
         }
     }
 
@@ -215,15 +213,6 @@ public class Engine : MonoBehaviour
 
         return goldPerSecond;
     }
-
-    void populateAdventurers()
-    {
-        Adventurer Hector = new Adventurer(0, 1, "Hector", "Axeman", 100, 100, 0, 10, 9, 3, 9, 3, 6);
-        Adventurer Balmung = new Adventurer(1, 1, "Balmung", "Swordsman", 100, 100, 0, 6, 9, 5, 7, 5, 7);
-        Adventurer Aeris = new Adventurer(3, 1, "Aeris", "Cleric", 100, 100, 0, 4, 3, 6, 3, 9, 6);
-        Adventurer Jake = new Adventurer(4, 1, "Aeris", "Warhound", 100, 100, 0, 7, 10, 2, 3, 3, 10);
-    }
-
 
     /*void generateAdventurer()
     {

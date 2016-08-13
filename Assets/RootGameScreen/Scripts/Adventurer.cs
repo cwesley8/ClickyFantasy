@@ -8,6 +8,7 @@ public class Adventurer
 {
     public int ID { get; set; }
     public int CurLevel { get; set; }
+    public int CurRank { get; set; }
     public string Name { get; set; }
     public string CharClass { get; set; }
     public int TotalHP { get; set; }
@@ -19,12 +20,16 @@ public class Adventurer
     public int PDef { get; set; }
     public int MDef { get; set; }
     public int Speed { get; set; }
+    public string CurTask { get; set; }
 
-    public Adventurer(int id, int curLevel, string name, string charClass, int totalHP, int curHP, int curXP, int hp, int pAtk, int mAtk, int pDef, int mDef, int speed)
+    public Adventurer(int id, int curLevel, int curRank, string name, string charClass, int totalHP, int curHP, int curXP, 
+                      int hp, int pAtk, int mAtk, int pDef, int mDef, int speed, string curTask)
     {
         ID = id;
         CurLevel = curLevel;
-        Name = Name;
+        CurRank = curRank;
+        CurTask = curTask;
+        Name = name;
         CharClass = charClass;
         TotalHP = totalHP;
         CurHP = curHP;
@@ -38,7 +43,7 @@ public class Adventurer
     }
 
     /****************************
-    Notes on character classes
+    Notes on character classes (may create an encyclopedia page for all this info)
     All stats on a scale of 0 to 10. These values dictate % chance that a stat will grow on level up (1 point = 10%)
     Axeman: Takes hits as well as they dish them out. Lacks accuracy because of use of axes and has naturally low speed.
         HP:||||||||||
@@ -48,7 +53,7 @@ public class Adventurer
         MD:|||
         SP:||||||
     
-    Swordsman: The most balanced adventurer. Can tackle most quests and works well in any team. 
+    Swordsman: The most balanced adventurer. An asset on most quests and works well in any team. 
         HP:||||||
         PA:|||||||||
         MA:|||||

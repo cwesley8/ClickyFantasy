@@ -14,7 +14,6 @@ public class HireBoard : MonoBehaviour
 
 	//Quest stuff
 	public List<Hire> Hires = new List<Hire>();
-	private string hireTitle;
 
 	void OnGUI()
 	{
