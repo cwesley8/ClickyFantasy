@@ -8,7 +8,8 @@ using System.Threading;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 
-public class Engine : MonoBehaviour {
+public class Engine : MonoBehaviour
+{
 
     public Texture backgroundTexture;
 
@@ -41,6 +42,12 @@ public class Engine : MonoBehaviour {
     public float rogueStatusPosY;
     public float QuestBoardPosX;
     public float QuestBoardPosY;
+    public float BlacksmithPosX;
+    public float BlacksmithPosY;
+    public float HireBoardPosX;
+    public float HireBoardPosY;
+    public float RosterPosX;
+    public float RosterPosY;
 
     public int totalGold = 10;
     public int goldPerSecond = 0;
@@ -68,18 +75,18 @@ public class Engine : MonoBehaviour {
     public System.Random ran = new System.Random();
 
     public List<Adventurer> Adventurers = new List<Adventurer>();
-    
+
     void OnGUI()
     {
         //Display background texture 
         GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundTexture);
-       
+
         //Display all income and hired mercenaries information
         GUI.Label(new Rect(Screen.width * goldLabelPosX, Screen.height * goldLabelPosY, Screen.width * .5f, Screen.height * .1f), "Gold:" + totalGold.ToString());
         GUI.Label(new Rect(Screen.width * gpsLabelPosX, Screen.height * gpsLabelPosY, Screen.width * .5f, Screen.height * .1f), "GPS: " + goldPerSecond.ToString());
 
         //Cases for warrior level and status
-        if(warriorLevel > 0)
+        if (warriorLevel > 0)
         {
             GUI.Label(new Rect(Screen.width * warriorLevelPosX, Screen.height * warriorLevelPosY, Screen.width * .5f, Screen.height * .1f), "Warrior Level: " + warriorLevel.ToString());
             GUI.Label(new Rect(Screen.width * warriorRankPosX, Screen.height * warriorRankPosY, Screen.width * .5f, Screen.height * .1f), "Rank: " + warriorRank.ToString());
@@ -102,10 +109,10 @@ public class Engine : MonoBehaviour {
         }
         //Press on the hire warrior to increment warrior count
         if (GUI.Button(new Rect(Screen.width * warriorHirePosX, Screen.height * warriorHirePosY, Screen.width * .5f, Screen.height * .1f),
-			"Level Warrior cost: " + warriorPrice))
+            "Level Warrior cost: " + warriorPrice))
         {
-            if( //TODO remove after testing totalGold >= warriorPrice && 
-				warriorLevel < 9)
+            if ( //TODO remove after testing totalGold >= warriorPrice && 
+                warriorLevel < 9)
             {
                 warriorLevel = warriorLevel + 1;
                 totalGold -= warriorPrice;
@@ -121,10 +128,10 @@ public class Engine : MonoBehaviour {
             SceneManager.LoadScene("UpgradeScreen");
         }
         if (GUI.Button(new Rect(Screen.width * rogueHirePosX, Screen.height * rogueHirePosY, Screen.width * .5f, Screen.height * .1f),
-			"Level Rogue cost: " + roguePrice))
+            "Level Rogue cost: " + roguePrice))
         {
             if (//TODO remove after testing totalGold >= roguePrice && 
-				rogueLevel < 9)
+                rogueLevel < 9)
             {
                 rogueLevel = rogueLevel + 1;
                 totalGold -= roguePrice;
@@ -132,27 +139,51 @@ public class Engine : MonoBehaviour {
         }
         if (GUI.Button(new Rect(Screen.width * rogueUpgradePosX, Screen.height * rogueUpgradePosY, Screen.width * .5f, Screen.height * .1f), "Upgrade Rogue"))
         {
-			//Save current stats
-			rogueUpgrade = true;
-			saveGuildState ();
-        
-			//Load upgrade screen
-			SceneManager.LoadScene ("UpgradeScreen");
+            //Save current state
+            rogueUpgrade = true;
+            saveGuildState();
+
+            //Load upgrade screen
+            SceneManager.LoadScene("UpgradeScreen");
         }
         if (GUI.Button(new Rect(Screen.width * QuestBoardPosX, Screen.height * QuestBoardPosY, Screen.width * .5f, Screen.height * .1f), "Quest Board"))
         {
-            //Save current stats
+            //Save current state
             saveGuildState();
 
             //Load quest board
             SceneManager.LoadScene("QuestBoard");
         }
+        if (GUI.Button(new Rect(Screen.width * BlacksmithPosX, Screen.height * BlacksmithPosY, Screen.width * .5f, Screen.height * .1f), "Blacksmith"))
+        {
+            //Save current state
+            saveGuildState();
+
+            //Load blacksmith scene
+            SceneManager.LoadScene("Blacksmith");
+        }
+        if (GUI.Button(new Rect(Screen.width * HireBoardPosX, Screen.height * HireBoardPosY, Screen.width * .5f, Screen.height * .1f), "Hire Board"))
+        {
+            //Save current state
+            saveGuildState();
+
+            //Load hire board
+            SceneManager.LoadScene("HireBoard");
+        }
+        if (GUI.Button(new Rect(Screen.width * RosterPosX, Screen.height * RosterPosY, Screen.width * .5f, Screen.height * .1f), "Roster"))
+        {
+            //Save current state
+            //saveGuildState();
+
+            //Load blacksmith scene
+            //SceneManager.LoadScene("HireBoard");
+        }
     }
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-        
+
         goldUpdateTime = 1f;
         //Reload all saved variables
         totalGold = StaticData.savedTotalGold;
@@ -164,9 +195,9 @@ public class Engine : MonoBehaviour {
         warriorUpgrade = StaticData.warriorUpPressed;
         rogueUpgrade = StaticData.rogueUpPressed;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         goldUpdateTime -= Time.deltaTime;
         if (goldUpdateTime <= 0)
@@ -187,7 +218,10 @@ public class Engine : MonoBehaviour {
 
     void populateAdventurers()
     {
-        Adventurer Hector = new Adventurer(1, "Hector", "Warrior", 100, 100, 0, 10, 5, 10, 5, 7);
+        Adventurer Hector = new Adventurer(0, 1, "Hector", "Axeman", 100, 100, 0, 10, 9, 3, 9, 3, 6);
+        Adventurer Balmung = new Adventurer(1, 1, "Balmung", "Swordsman", 100, 100, 0, 6, 9, 5, 7, 5, 7);
+        Adventurer Aeris = new Adventurer(3, 1, "Aeris", "Cleric", 100, 100, 0, 4, 3, 6, 3, 9, 6);
+        Adventurer Jake = new Adventurer(4, 1, "Aeris", "Warhound", 100, 100, 0, 7, 10, 2, 3, 3, 10);
     }
 
 

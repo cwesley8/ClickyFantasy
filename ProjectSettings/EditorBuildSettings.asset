@@ -15,3 +15,7 @@ EditorBuildSettings:
     path: Assets/UpgradeScreen/UpgradeScreen.unity
   - enabled: 1
     path: Assets/QuestBoard/QuestBoard.unity
+  - enabled: 1
+    path: Assets/Blacksmith/Blacksmith.unity
+  - enabled: 1
+    path: Assets/HireBoard/HireBoard.unity

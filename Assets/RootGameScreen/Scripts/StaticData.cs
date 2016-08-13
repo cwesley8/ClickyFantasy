@@ -28,4 +28,5 @@ public static class StaticData
 
     //Quest Board related junk
     static public int numOfQuests { get; set; }
+    static public int numOfHires { get; set; }
 }

@@ -90,19 +90,19 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &646931382
+--- !u!1 &1719984506
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 646931387}
-  - 20: {fileID: 646931386}
-  - 92: {fileID: 646931385}
-  - 124: {fileID: 646931384}
-  - 81: {fileID: 646931383}
-  - 114: {fileID: 646931388}
+  - 4: {fileID: 1719984511}
+  - 20: {fileID: 1719984510}
+  - 92: {fileID: 1719984509}
+  - 124: {fileID: 1719984508}
+  - 81: {fileID: 1719984507}
+  - 114: {fileID: 1719984512}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -110,33 +110,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &646931383
+--- !u!81 &1719984507
 AudioListener:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 646931382}
+  m_GameObject: {fileID: 1719984506}
   m_Enabled: 0
---- !u!124 &646931384
+--- !u!124 &1719984508
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 646931382}
+  m_GameObject: {fileID: 1719984506}
   m_Enabled: 1
---- !u!92 &646931385
+--- !u!92 &1719984509
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 646931382}
+  m_GameObject: {fileID: 1719984506}
   m_Enabled: 1
---- !u!20 &646931386
+--- !u!20 &1719984510
 Camera:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 646931382}
+  m_GameObject: {fileID: 1719984506}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -165,12 +165,12 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!4 &646931387
+--- !u!4 &1719984511
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 646931382}
+  m_GameObject: {fileID: 1719984506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -178,18 +178,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &646931388
+--- !u!114 &1719984512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 646931382}
+  m_GameObject: {fileID: 1719984506}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1160251b6de49db8585bbf84c56d8d, type: 3}
+  m_Script: {fileID: 11500000, guid: e902b5e5cb2451b4d9fc0e25fdd16d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundTexture: {fileID: 2800000, guid: 7899ab7a4d1734c9baecd82f7b349f33, type: 3}
-  hireTitlePosX: 0
-  hireTitlePosY: 0
+  backgroundTexture: {fileID: 2800000, guid: 1b83eb74c08ac644580e11c7004f5d1e, type: 3}
+  blacksmithTitlePosX: 0
+  blacksmithTitlePosY: 0
   scrollPosition: {x: 0, y: 0}
