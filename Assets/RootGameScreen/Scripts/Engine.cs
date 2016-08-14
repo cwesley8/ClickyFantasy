@@ -41,6 +41,8 @@ public class Engine : MonoBehaviour {
     public float rogueStatusPosY;
     public float QuestBoardPosX;
     public float QuestBoardPosY;
+	public float HirePosX;
+	public float HirePosY;
 
     public int totalGold = 10;
     public int goldPerSecond = 0;
@@ -77,6 +79,15 @@ public class Engine : MonoBehaviour {
         //Display all income and hired mercenaries information
         GUI.Label(new Rect(Screen.width * goldLabelPosX, Screen.height * goldLabelPosY, Screen.width * .5f, Screen.height * .1f), "Gold:" + totalGold.ToString());
         GUI.Label(new Rect(Screen.width * gpsLabelPosX, Screen.height * gpsLabelPosY, Screen.width * .5f, Screen.height * .1f), "GPS: " + goldPerSecond.ToString());
+
+		if (GUI.Button(new Rect(Screen.width * HirePosX, Screen.height * HirePosY, Screen.width * .5f, Screen.height * .1f), "Hire"))
+		{
+			//Save current stats
+			saveGuildState();
+
+			//Load quest board
+			SceneManager.LoadScene("HireBoard");
+		}
 
         //Cases for warrior level and status
         if(warriorLevel > 0)
