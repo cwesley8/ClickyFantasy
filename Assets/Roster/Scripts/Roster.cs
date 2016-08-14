@@ -171,10 +171,10 @@ public class Roster : MonoBehaviour
         charPortraitPanel.transform.localScale += new Vector3(.3f, .3f, 0);
         charPortraitPanel.transform.position = new Vector3(-85, 165, 0);
         charPortraitPanel.AddComponent<CanvasRenderer>();
+
         Image charPortraitImage = charPortraitPanel.AddComponent<Image>();
-        charPortraitImage.color = Color.black;
+        string charPortraitName = adventurer.Name;
+        charPortraitImage.sprite = Resources.Load(charPortraitName, typeof(Sprite)) as Sprite;
         charPortraitPanel.transform.SetParent(newCanvas.transform, false);
-        
-        //
     }
 }
