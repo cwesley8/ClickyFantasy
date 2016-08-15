@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundTexture: {fileID: 2800000, guid: 2bda038ca3a5b3d42927fb9185ad0740, type: 3}
   goldButtonPosX: 0.25
-  goldButtonPosY: 0.5
+  goldButtonPosY: 0.375
   goldLabelPosX: 0
   goldLabelPosY: 0
   gpsLabelPosX: 0
@@ -216,8 +216,14 @@ MonoBehaviour:
   rogueUpgradePosY: 0.75
   rogueStatusPosX: 0.5
   rogueStatusPosY: 0.13
-  QuestBoardPosX: 0.25
+  QuestBoardPosX: 0.5
   QuestBoardPosY: 0.875
+  BlacksmithPosX: 0
+  BlacksmithPosY: 0.5
+  HireBoardPosX: 0
+  HireBoardPosY: 0.875
+  RosterPosX: 0.5
+  RosterPosY: 0.5
   totalGold: 0
   goldPerSecond: 0
   warriorLevel: 0

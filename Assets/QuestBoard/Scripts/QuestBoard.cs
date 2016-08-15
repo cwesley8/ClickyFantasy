@@ -14,12 +14,9 @@ public class QuestBoard : MonoBehaviour
 
     //Quest stuff
     public List<Quest> Quests = new List<Quest>();
-    private string questTitle;
 
     void OnGUI()
-    {
-        
-
+    {       
         //Display background texture 
         GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundTexture);
 
@@ -27,7 +24,7 @@ public class QuestBoard : MonoBehaviour
         GUI.Label(new Rect(Screen.width * questBoardTitlePosX, Screen.height * questBoardTitlePosY, Screen.width * .5f, Screen.height * .1f), "Quest Board");
 
         if (GUI.Button(new Rect(Screen.width * 0.25f, Screen.height * 0.875f, Screen.width * .5f, Screen.height * .1f), "Return"))
-        {
+        { 
             //Return to root game screen
             SceneManager.LoadScene("RootGameScreen");
         }
@@ -49,7 +46,7 @@ public class QuestBoard : MonoBehaviour
     void populateQuests()
     {
         //Rank 1 quests
-        Quest RatExtermination = new Quest(0, "Rat Extermination", 1, 1000, 50, "Rat Tails");
+        Quest RatExtermination = new Quest(0, "Rat Extermination", 1, 1000, 50, "Rat Tail");
         Quest GatherHerbs = new Quest(1, "Local Teen Needs Herb", 1, 500, 25, "Funny Herbs");
 
         //Rank 2 quests
@@ -58,7 +55,6 @@ public class QuestBoard : MonoBehaviour
 
         //Rank 3 quests
         Quest DragonHunt = new Quest(4, "Dragon Slayer", 3, 100000, 5000, "Blue Dragon Scale");
-
 
         Quests.Add(RatExtermination);
         Quests.Add(GatherHerbs);
@@ -73,6 +69,7 @@ public class QuestBoard : MonoBehaviour
     {
         populateQuests();
     }
+
     public Quest QuestByID(int id)
     {
         foreach (Quest quest in Quests)
