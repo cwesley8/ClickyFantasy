@@ -22,8 +22,21 @@ public class Adventurer
     public int Speed { get; set; }
     public string CurTask { get; set; }
 
+    //Hire properties
+    public int ReqGold { get; set; }
+    public bool Hired { get; set; }
+
+    //Growth rate properties
+    public int HPGrowth { get; set; }
+    public int AttGrowth { get; set; }
+    public int DefGrowth { get; set; }
+    public int MagGrowth { get; set; }
+    public int ResGrowth { get; set; }
+    public int SpdGrowth { get; set; }
+
     public Adventurer(int id, int curLevel, int curRank, string name, string charClass, int totalHP, int curHP, int curXP, 
-                      int hp, int pAtk, int mAtk, int pDef, int mDef, int speed, string curTask)
+                      int hp, int pAtk, int mAtk, int pDef, int mDef, int speed, string curTask, int reqGold, bool hired,
+                      int hpGrowth, int attGrowth, int magGrowth, int defGrowth, int resGrowth, int spdGrowth)
     {
         ID = id;
         CurLevel = curLevel;
@@ -40,6 +53,14 @@ public class Adventurer
         PDef = pDef;
         MDef = mDef;
         Speed = speed;
+        ReqGold = reqGold;
+        Hired = hired;
+        HPGrowth = hpGrowth;
+        AttGrowth = attGrowth;
+        DefGrowth = defGrowth;
+        MagGrowth = magGrowth;
+        ResGrowth = resGrowth;
+        SpdGrowth = spdGrowth;
     }
 
     /****************************

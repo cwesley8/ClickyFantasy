@@ -90,19 +90,19 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1131044932
+--- !u!1 &966671144
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1131044937}
-  - 20: {fileID: 1131044936}
-  - 92: {fileID: 1131044935}
-  - 124: {fileID: 1131044934}
-  - 81: {fileID: 1131044933}
-  - 114: {fileID: 1131044938}
+  - 4: {fileID: 966671149}
+  - 20: {fileID: 966671148}
+  - 92: {fileID: 966671147}
+  - 124: {fileID: 966671146}
+  - 81: {fileID: 966671145}
+  - 114: {fileID: 966671150}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -110,33 +110,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1131044933
+--- !u!81 &966671145
 AudioListener:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1131044932}
+  m_GameObject: {fileID: 966671144}
   m_Enabled: 0
---- !u!124 &1131044934
+--- !u!124 &966671146
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1131044932}
+  m_GameObject: {fileID: 966671144}
   m_Enabled: 1
---- !u!92 &1131044935
+--- !u!92 &966671147
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1131044932}
+  m_GameObject: {fileID: 966671144}
   m_Enabled: 1
---- !u!20 &1131044936
+--- !u!20 &966671148
 Camera:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1131044932}
+  m_GameObject: {fileID: 966671144}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -165,12 +165,12 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!4 &1131044937
+--- !u!4 &966671149
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1131044932}
+  m_GameObject: {fileID: 966671144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -178,54 +178,94 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &1131044938
+--- !u!114 &966671150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1131044932}
+  m_GameObject: {fileID: 966671144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a3593c5e03d37c4c91e126f050d4e0c, type: 3}
+  m_Script: {fileID: 11500000, guid: ac52c6e627c61864fbd3fd8ace6fa552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundTexture: {fileID: 2800000, guid: 2bda038ca3a5b3d42927fb9185ad0740, type: 3}
-  goldButtonPosX: 0.25
-  goldButtonPosY: 0.375
-  goldLabelPosX: 0
-  goldLabelPosY: 0
-  gpsLabelPosX: 0
-  gpsLabelPosY: 0.03
-  warriorUpgradePosX: 0.5
-  warriorUpgradePosY: 0.625
-  rogueUpgradePosX: 0.5
-  rogueUpgradePosY: 0.75
-  QuestBoardPosX: 0.5
-  QuestBoardPosY: 0.875
-  BlacksmithPosX: 0
-  BlacksmithPosY: 0.5
-  HireBoardPosX: 0
-  HireBoardPosY: 0.875
-  RosterPosX: 0.5
-  RosterPosY: 0.5
-  totalGold: 0
-  goldPerSecond: 0
-  adventurerNamePosX: 0
-  adventurerNamePosY: 0.06
-  adventurerLevelPosX: 0.18
-  adventurerLevelPosY: 0.06
-  adventurerRankPosX: 0.37
-  adventurerRankPosY: 0.06
-  adventurerTaskPosX: 0.52
-  adventurerTaskPosY: 0.06
-  warriorLevel: 0
-  warriorStatus: Idle
-  warriorRank: 0
-  warriorUpgrade: 0
-  rogueUpgrade: 0
-  rogueLevel: 0
-  rogueStatus: Idle
-  rogueRank: 0
-  goldUpdateTime: 100
-  guildLevel: 1
-  scrollPosition: {x: 0, y: 0}
+--- !u!1 &1371149142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1371149145}
+  - 212: {fileID: 1371149144}
+  - 95: {fileID: 1371149143}
+  m_Layer: 0
+  m_Name: hector_animation_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &1371149143
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1371149142}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d99c38172a506494b9f479cfc2cdadb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!212 &1371149144
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1371149142}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 1
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: e60d873a56bae5d48937339fe4e4dc68, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!4 &1371149145
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1371149142}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.581, y: -1.574, z: 0}
+  m_LocalScale: {x: 7.37362, y: 7.37362, z: 7.37362}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1

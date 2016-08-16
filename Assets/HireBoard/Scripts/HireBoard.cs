@@ -13,7 +13,7 @@ public class HireBoard : MonoBehaviour
 	public Vector2 scrollPosition = Vector2.zero;
 
 	//Quest stuff
-	public List<Hire> Hires = new List<Hire>();
+	public List<Adventurer> Adventurers = new List<Adventurer>();
 
 	void OnGUI()
 	{
@@ -25,59 +25,56 @@ public class HireBoard : MonoBehaviour
 
 		if (GUI.Button(new Rect(Screen.width * 0.25f, Screen.height * 0.875f, Screen.width * .5f, Screen.height * .1f), "Return"))
 		{
-			//Return to root game screen
-			SceneManager.LoadScene("RootGameScreen");
+            saveStaticData();
+            //Return to root game screen
+            SceneManager.LoadScene("RootGameScreen");
 		}
 
-		using (var scrollScope = new GUI.ScrollViewScope(new Rect(10, 30, 310, 390), scrollPosition, new Rect(0, 0, 310, Hires.Count*100)))
+		using (var scrollScope = new GUI.ScrollViewScope(new Rect(10, 30, 310, 390), scrollPosition, new Rect(0, 0, 310, Adventurers.Count*100)))
 		{
 			scrollPosition = scrollScope.scrollPosition;
 
-			//Populate quest list with all known quests
-
-			for (int i = 0; i < Hires.Count; i++)
-			{              
-				GUI.Button(new Rect(0, i*100, 280, 100), HireByID(i).Title + "\nReq. Gold: " + HireByID(i).ReqGold);
+            //Render hire list  
+            int j = -1;
+			for (int i = 0; i < Adventurers.Count; i++)
+			{        
+                if(!AdventurerByID(i).Hired)
+                {
+                    j++;
+                    if (GUI.Button(new Rect(0, j * 100, 280, 100), AdventurerByID(i).Name + "\nReq. Gold: " + AdventurerByID(i).ReqGold))
+                    {
+                        AdventurerByID(i).Hired = true;                       
+                    }
+                }
 			}
 		}
 	}
 
-	//hirables
-	void populateHires()
-	{
-		//hires
-		Hire Ratatuille = new Hire(0, "Ratatuille", 1000);
-		Hire Gerber = new Hire(1, "Gerber", 1500);
-
-		Hire KingHunter = new Hire(2, "King Hunter", 2000);
-		Hire Gatherer = new Hire(3, "Gatherer", 2500);
-
-		Hire DragonHunter = new Hire(4, "Dragon Hunter", 3000);
-
-
-		Hires.Add(Ratatuille);
-		Hires.Add(Gerber);
-		Hires.Add(KingHunter);
-		Hires.Add(Gatherer);
-		Hires.Add(DragonHunter);
-
-		StaticData.numOfHires = Hires.Count;
-	}
-
 	void Start()
 	{
-		populateHires();
+        loadStaticData();
 	}
-	public Hire HireByID(int id)
+
+	public Adventurer AdventurerByID(int id)
 	{
-		foreach (Hire hire in Hires)
+		foreach (Adventurer Adventurer in Adventurers)
 		{
-			if (hire.ID == id)
+			if (Adventurer.ID == id)
 			{
-				return hire;
+				return Adventurer;
 			}
 		}
 
 		return null;
 	}
+
+    void saveStaticData()
+    {
+        StaticData.numOfAdventurers = Adventurers.Count;
+    }
+
+    void loadStaticData()
+    {
+        Adventurers = StaticData.savedAdventurers;
+    }
 }

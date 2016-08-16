@@ -42,10 +42,10 @@ public class Roster : MonoBehaviour
     public Vector2 scrollPosition = Vector2.zero;
 
     public bool charDetailPanelUp = false;
+    public bool levelButtonUp = false;
 
     //Quest stuff
     public List<Adventurer> Adventurers = new List<Adventurer>();
-
     public int selectedAdventurer;
 
     void OnGUI()
@@ -57,6 +57,9 @@ public class Roster : MonoBehaviour
 
             if (GUI.Button(new Rect(Screen.width * 0.25f, Screen.height * 0.875f, Screen.width * .5f, Screen.height * .1f), "Return"))
             {
+                //Save changes to adventurers
+                saveRosterState();
+
                 //Return to root game screen
                 SceneManager.LoadScene("RootGameScreen");
             }
@@ -65,20 +68,21 @@ public class Roster : MonoBehaviour
             {
                 scrollPosition = scrollScope.scrollPosition;
 
-                //Populate quest list with current adventurers
+                //Populate list with hired adventurers
 
                 for (int i = 0; i < Adventurers.Count; i++)
                 {
-
-                    if (GUI.Button(new Rect(0, i * 100, 280, 100), AdventurerByID(i).Name + "\nClass: " + AdventurerByID(i).CharClass + "\nRank: " + AdventurerByID(i).CurRank + "\nTask: " + AdventurerByID(i).CurTask))
+                    if (AdventurerByID(i).Hired)
                     {
-                        //Disable adventurer buttons
-                        charDetailPanelUp = true;
-                        //Add panel to display character info and task selection menu
-                        setCharDetailPanel(AdventurerByID(i));
-                        selectedAdventurer = i;
+                        if (GUI.Button(new Rect(0, i * 100, 280, 100), AdventurerByID(i).Name + "\nClass: " + AdventurerByID(i).CharClass + "\nLevel: " + AdventurerByID(i).CurLevel + "\nRank: " + AdventurerByID(i).CurRank + "\nTask: " + AdventurerByID(i).CurTask))
+                        {
+                            //Disable adventurer buttons
+                            charDetailPanelUp = true;
+                            //Add panel to display character info and task selection menu
+                            setCharDetailPanel(AdventurerByID(i));
+                            selectedAdventurer = i;
+                        }
                     }
-
                 }
             }
         }
@@ -103,38 +107,48 @@ public class Roster : MonoBehaviour
             //Change Task 
             if (GUI.Button(new Rect(Screen.width * taskChangePosX, Screen.height * taskChangePosY, Screen.width * .5f, Screen.height * .1f), "Change Task"))
             {
-                print("Task change");
+                //TODO add scroll menu with options from task string array
+                AdventurerByID(selectedAdventurer).CurTask = "Flipping burgers";
             }
 
             //Exit Detail mode
             if (GUI.Button(new Rect(Screen.width * 0.875f, Screen.height * 0f, 40, 40), "X"))
             {
-                Destroy(GameObject.Find("Canvas"));
+                saveRosterState();
+                Destroy(GameObject.Find("Detail Canvas"));                                
                 charDetailPanelUp = false;
+            }
+
+            //Run animation test
+            if (GUI.Button(new Rect(Screen.width * 0.25f, Screen.height * 0.875f, Screen.width * .5f, Screen.height * .1f), "Animation"))
+            {
+                //Save changes to adventurers
+                saveRosterState();
+
+                //Go to animation test for character
+                SceneManager.LoadScene("AnimationTest");
+            }
+
+            //Level Up
+            if (GUI.Button(new Rect(Screen.width * 0.25f, Screen.height * 0.5f, Screen.width * .5f, Screen.height * .1f), "Level Up"))
+            {
+                //Level up guy
+                levelAdventurer(AdventurerByID(selectedAdventurer));
+            }
+
+            //Change Equipment
+            if (GUI.Button(new Rect(Screen.width * 0.25f, Screen.height * 0.625f, Screen.width * .5f, Screen.height * .1f), "Equip"))
+            {
+
             }
         }
     }
 
     //TODO: Add funcitonality that converts new hires to adventurers
-    void populateAdventurers()
-    {
-        //These are default adventurers you start the game with
-        Adventurer Hector = new Adventurer(0, 1, 1, "Hector", "Axeman", 100, 100, 0, 10, 9, 3, 9, 3, 6, "Idle");
-        Adventurer Balmung = new Adventurer(1, 1, 1, "Balmung", "Swordsman", 100, 100, 0, 6, 9, 5, 7, 5, 7, "Idle");
-        Adventurer Aeris = new Adventurer(2, 1, 1, "Aeris", "Cleric", 100, 100, 0, 4, 3, 6, 3, 9, 6, "Idle");
-        Adventurer Jake = new Adventurer(3, 1, 1, "Jake", "Warhound", 100, 100, 0, 7, 10, 2, 3, 3, 10, "Idle");
-
-        Adventurers.Add(Hector);
-        Adventurers.Add(Balmung);
-        Adventurers.Add(Aeris);
-        Adventurers.Add(Jake);
-
-        StaticData.numOfAdventurers = Adventurers.Count;
-    }
 
     void Start()
     {
-        populateAdventurers();
+        loadStaticData();
     }
 
     public Adventurer AdventurerByID(int id)
@@ -150,16 +164,17 @@ public class Roster : MonoBehaviour
         return null;
     }
 
+    //Displays deatailed character information
     void setCharDetailPanel(Adventurer adventurer)
     {
-        GameObject newCanvas = new GameObject("Canvas");
+        GameObject newCanvas = new GameObject("Detail Canvas");
         Canvas c = newCanvas.AddComponent<Canvas>();
         c.renderMode = RenderMode.ScreenSpaceOverlay;
         newCanvas.AddComponent<CanvasScaler>();
         newCanvas.AddComponent<GraphicRaycaster>();
         
         //Bottom panel that everything will be placed on
-        GameObject bgPanel = new GameObject("Background Panel");
+        GameObject bgPanel = new GameObject("Background");
         bgPanel.transform.localScale += new Vector3(3f, 4f, 0);
         bgPanel.AddComponent<CanvasRenderer>();
         Image bgPanelImage = bgPanel.AddComponent<Image>();
@@ -167,7 +182,7 @@ public class Roster : MonoBehaviour
         bgPanelImage.transform.SetParent(newCanvas.transform, false);
 
         //Character portrai will go here
-        GameObject charPortraitPanel = new GameObject("Character Portrait Panel");
+        GameObject charPortraitPanel = new GameObject("Character Portrait");
         charPortraitPanel.transform.localScale += new Vector3(.3f, .3f, 0);
         charPortraitPanel.transform.position = new Vector3(-85, 165, 0);
         charPortraitPanel.AddComponent<CanvasRenderer>();
@@ -176,5 +191,57 @@ public class Roster : MonoBehaviour
         string charPortraitName = adventurer.Name;
         charPortraitImage.sprite = Resources.Load(charPortraitName, typeof(Sprite)) as Sprite;
         charPortraitPanel.transform.SetParent(newCanvas.transform, false);
+    }
+
+    void saveRosterState()
+    {
+        StaticData.savedAdventurers = Adventurers;
+    }
+
+    void loadStaticData()
+    {
+        Adventurers = StaticData.savedAdventurers;
+    }
+
+    void levelAdventurer(Adventurer adventurer)
+    {
+        System.Random ran = new System.Random();
+
+        if (adventurer.CurLevel < 100)
+        {
+            adventurer.CurLevel++;
+
+            if(ran.Next(1, 100) < adventurer.HPGrowth*10)
+            {
+                adventurer.HP++;
+            }
+            adventurer.TotalHP += adventurer.HP;
+            adventurer.CurHP += adventurer.HP;
+
+            if (ran.Next(1, 100) < adventurer.AttGrowth * 10)
+            {
+                adventurer.PAtk++;
+            }
+
+            if (ran.Next(1, 100) < adventurer.MagGrowth * 10)
+            {
+                adventurer.MAtk++;
+            }
+
+            if (ran.Next(1, 100) < adventurer.DefGrowth * 10)
+            {
+                adventurer.PDef++;
+            }
+
+            if (ran.Next(1, 100) < adventurer.ResGrowth * 10)
+            {
+                adventurer.MDef++;
+            }
+
+            if (ran.Next(1, 100) < adventurer.SpdGrowth * 10)
+            {
+                adventurer.Speed++;
+            }
+        }                
     }
 }

@@ -1,9 +1,64 @@
 fileFormatVersion: 2
 guid: e60d873a56bae5d48937339fe4e4dc68
-timeCreated: 1471132821
+timeCreated: 1471212606
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: hector_animation_0
+    21300002: hector_animation_1
+    21300004: hector_animation_2
+    21300006: hector_animation_3
+    21300008: hector_animation_4
+    21300010: hector_animation_5
+    21300012: hector_animation_6
+    21300014: hector_animation_7
+    21300016: hector_animation_8
+    21300018: hector_animation_9
+    21300020: hector_animation_10
+    21300022: hector_animation_11
+    21300024: hector_animation_12
+    21300026: hector_animation_14
+    21300028: hector_animation_15
+    21300030: hector_animation_16
+    21300032: hector_animation_17
+    21300034: hector_animation_18
+    21300036: hector_animation_19
+    21300038: hector_animation_20
+    21300040: hector_animation_22
+    21300042: hector_animation_23
+    21300044: hector_animation_24
+    21300046: hector_animation_25
+    21300048: hector_animation_26
+    21300050: hector_animation_27
+    21300052: hector_animation_28
+    21300054: hector_animation_29
+    21300056: hector_animation_30
+    21300058: hector_animation_31
+    21300060: hector_animation_32
+    21300062: hector_animation_33
+    21300064: hector_animation_34
+    21300066: hector_animation_35
+    21300068: hector_animation_36
+    21300070: hector_animation_37
+    21300072: hector_animation_38
+    21300074: hector_animation_39
+    21300076: hector_animation_40
+    21300078: hector_animation_41
+    21300080: hector_animation_42
+    21300082: hector_animation_43
+    21300084: hector_animation_44
+    21300086: hector_animation_45
+    21300088: hector_animation_46
+    21300090: hector_animation_47
+    21300092: hector_animation_48
+    21300094: hector_animation_49
+    21300096: hector_animation_50
+    21300098: hector_animation_51
+    21300100: hector_animation_52
+    21300102: hector_animation_53
+    21300104: hector_animation_54
+    21300106: hector_animation_55
+    21300108: hector_animation_21
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +85,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +93,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,7 +106,709 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: hector_animation_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 423
+        width: 39
+        height: 36
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 423
+        width: 30
+        height: 36
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 423
+        width: 27
+        height: 35
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_3
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 423
+        width: 27
+        height: 35
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_4
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 423
+        width: 27
+        height: 35
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_5
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 423
+        width: 45
+        height: 55
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_6
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 423
+        width: 59
+        height: 55
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_7
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 361
+        width: 45
+        height: 27
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_8
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 360
+        width: 45
+        height: 27
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_9
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 360
+        width: 45
+        height: 27
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_10
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 359
+        width: 34
+        height: 43
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_11
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 359
+        width: 31
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_12
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 371
+        width: 29
+        height: 46
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_14
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 304
+        width: 41
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_15
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 304
+        width: 42
+        height: 47
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_16
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 304
+        width: 45
+        height: 40
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_17
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 304
+        width: 47
+        height: 31
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_18
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 304
+        width: 46
+        height: 31
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_19
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 304
+        width: 41
+        height: 31
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_20
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 256
+        width: 54
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_23
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 256
+        width: 44
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_24
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 256
+        width: 28
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_25
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 191
+        width: 39
+        height: 36
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_26
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 191
+        width: 43
+        height: 36
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_27
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 191
+        width: 31
+        height: 46
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_28
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 191
+        width: 31
+        height: 37
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_29
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 191
+        width: 32
+        height: 38
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_30
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 191
+        width: 30
+        height: 51
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_31
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 191
+        width: 30
+        height: 52
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_32
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 191
+        width: 30
+        height: 55
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_33
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 130
+        width: 30
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_34
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 130
+        width: 32
+        height: 57
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_35
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 130
+        width: 38
+        height: 40
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_36
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 131
+        width: 54
+        height: 40
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_37
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 131
+        width: 33
+        height: 45
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_38
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 131
+        width: 33
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_39
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 90
+        width: 38
+        height: 36
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_40
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 90
+        width: 55
+        height: 36
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_41
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 90
+        width: 53
+        height: 37
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_42
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 90
+        width: 48
+        height: 36
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_43
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 90
+        width: 48
+        height: 36
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_44
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 90
+        width: 53
+        height: 34
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 51
+        width: 46
+        height: 35
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_46
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 51
+        width: 41
+        height: 34
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_47
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 51
+        width: 40
+        height: 34
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_48
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 51
+        width: 34
+        height: 34
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_49
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 51
+        width: 35
+        height: 35
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_50
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 51
+        width: 28
+        height: 35
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_51
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 51
+        width: 43
+        height: 36
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_52
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 49
+        height: 39
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_53
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 0
+        width: 46
+        height: 36
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_54
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 41
+        height: 43
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_55
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 0
+        width: 47
+        height: 46
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hector_animation_21
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 256
+        width: 62
+        height: 30
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
